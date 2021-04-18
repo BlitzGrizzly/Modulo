@@ -1,0 +1,39 @@
+function modulo(num1, num2) {
+
+  if (num2 === 0) {
+    return NaN;
+  }
+  if (num1 === 0) {
+    return 0;
+  }
+
+  if(num1 === NaN || num2 === NaN){
+    return NaN;
+  }
+  //////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////
+
+    //returns correct sign
+   if(num1 < 0 && num2 < 0){
+    num1 = num1 * -1;
+   
+  }
+
+  let quotient = num1 / num2;
+  let dividend = Math.floor(quotient);
+  let decimal = quotient - dividend;
+  let remainder = decimal * num2;
+
+  // avoiding rounding errors by multiplying then dividing by 100
+  let rounding = remainder * 100;
+  let answer = Math.round(rounding);
+
+  
+  if(num2 < 0){
+    return (answer/100) * -1;
+  }
+
+return answer / 100;
+
+}
