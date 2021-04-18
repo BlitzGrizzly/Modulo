@@ -1,5 +1,7 @@
 function modulo(num1, num2) {
 
+  //input quality control
+
   if (num2 === 0) {
     return NaN;
   }
@@ -11,15 +13,15 @@ function modulo(num1, num2) {
     return NaN;
   }
   //////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////
 
-    //returns correct sign
+    // returns correct sign in calculation
    if(num1 < 0 && num2 < 0){
     num1 = num1 * -1;
    
   }
 
+    //calculating remainder
+    
   let quotient = num1 / num2;
   let dividend = Math.floor(quotient);
   let decimal = quotient - dividend;
@@ -30,10 +32,10 @@ function modulo(num1, num2) {
   let answer = Math.round(rounding);
 
   
+  // returns correct sign
   if(num2 < 0){
     return (answer/100) * -1;
   }
 
 return answer / 100;
-
 }
